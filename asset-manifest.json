@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rwitter/static/css/main.05898def.css",
+    "main.js": "/rwitter/static/js/main.eb52784d.js",
+    "index.html": "/rwitter/index.html",
+    "main.05898def.css.map": "/rwitter/static/css/main.05898def.css.map",
+    "main.eb52784d.js.map": "/rwitter/static/js/main.eb52784d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05898def.css",
+    "static/js/main.eb52784d.js"
+  ]
+}
