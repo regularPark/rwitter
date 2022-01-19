@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
 import { dbService, storageService } from "./../fbase";
-import { attachmentUrl } from "./../routes/Home";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Rweet = ({ rweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -28,32 +29,38 @@ const Rweet = ({ rweetObj, isOwner }) => {
     setNewRweet(value);
   };
   return (
-    <div>
+    <div className="rweet">
       {editing ? (
         <>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="container rweetEdit">
             <input
               type="text"
               placeholder="Edit your Rweet"
               value={newRweet}
               required
+              autoFocus
               onChange={onChange}
+              className="formInput"
             />
-            <input type="submit" value="Update Rweet" />
+            <input type="submit" value="Update Rweet" className="formBtn" />
           </form>
-          <button onClick={toggleEditing}>Cancel</button>
+          <button onClick={toggleEditing} className="formBtn cancelBtn">
+            Cancel
+          </button>
         </>
       ) : (
         <>
           <h4>{rweetObj.text}</h4>
-          {rweetObj.attachmentUrl && (
-            <img src={rweetObj.attachmentUrl} width="50px" height="50px" />
-          )}
+          {rweetObj.attachmentUrl && <img src={rweetObj.attachmentUrl} />}
           {isOwner && (
-            <>
-              <button onClick={onDeleteClick}>Delete Rweet</button>
-              <button onClick={toggleEditing}>Edit Rweet</button>
-            </>
+            <div className="rweet__actions">
+              <span onClick={onDeleteClick}>
+                <FontAwesomeIcon icon={faTrash} />
+              </span>
+              <span onClick={toggleEditing}>
+                <FontAwesomeIcon icon={faPencilAlt} />
+              </span>
+            </div>
           )}
         </>
       )}

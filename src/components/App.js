@@ -39,7 +39,9 @@ function App() {
       ) : (
         "Initializing..."
       )}
-      <footer>&copy; Rwitter {new Date().getFullYear()}</footer>
+      <footer className="copyright">
+        &copy; Rwitter {new Date().getFullYear()}
+      </footer>
     </>
   );
 }
