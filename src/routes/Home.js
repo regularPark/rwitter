@@ -6,13 +6,16 @@ import RweetFactory from "components/RweetFactory";
 const Home = ({ userObj }) => {
   const [rweets, setRweets] = useState([]);
   useEffect(() => {
-    dbService.collection("rweets").onSnapshot((snapshot) => {
-      const rweetArray = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setRweets(rweetArray);
-    });
+    dbService
+      .collection("rweets")
+      .orderBy("createdAt", "desc")
+      .onSnapshot((snapshot) => {
+        const rweetArray = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setRweets(rweetArray);
+      });
   }, []);
 
   return (
