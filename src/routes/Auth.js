@@ -6,9 +6,6 @@ import {
   faTwitter,
   faGoogle,
   faGithub,
-  faFontAwesomeFlag,
-  faFontAwesomeAlt,
-  faFontAwesome,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Auth = () => {
