@@ -101,12 +101,15 @@ a {
 .authBtn {
     width: 100%;
     max-width: 320px;
-    padding: 10px;
-    border-radius: 30px;
+    padding: 10px 0px;
+    border-radius: 20px;
+    border: none;
     background-color: white;
     color: black;
     font-size: 12px;
     margin-bottom: 10px;
+    text-align: center;
+    width: 150px;
 }
 
 /* AuthForm */
@@ -141,7 +144,9 @@ a {
     color: #04aaff;
     cursor: pointer;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+    display: block;
+    font-size: 13px;
     text-decoration: underline;
 }
 
