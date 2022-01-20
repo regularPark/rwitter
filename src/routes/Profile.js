@@ -32,7 +32,7 @@ const Profile = ({ refreshUser, userObj }) => {
           onChange={onChange}
           type="text"
           autoFocus
-          placeholder="Display name"
+          placeholder="닉네임을 입력해주세요."
           value={newDisplayName}
           className="formInput"
         />

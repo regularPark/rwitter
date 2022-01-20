@@ -21,7 +21,7 @@ input {
 }
 
 body {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.678);
     color: white;
 }
 
@@ -57,10 +57,10 @@ a {
     cursor: pointer;
     width: 100%;
     padding: 7px 20px;
-    color: white;
-    background-color: #04aaff;
-    border: 1px solid black;
-    border-radius: 20px;
+    color: black;
+    background-color: #c992c0;
+    border: none;
+    border-radius: 20px ;
     text-align: center;
 }
 

@@ -50,7 +50,7 @@ const Rweet = ({ rweetObj, isOwner, userObj }) => {
       ) : (
         <>
           <h4>{rweetObj.text}</h4>
-          <h5>{userObj.displayName}</h5>
+          <h5>{rweetObj.creatorName}</h5>
           <h6>{rweetObj.createTime}</h6>
           {rweetObj.attachmentUrl && <img src={rweetObj.attachmentUrl} />}
           {isOwner && (

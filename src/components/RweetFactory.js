@@ -26,7 +26,9 @@ const RweetFactory = ({ userObj }) => {
       createTime: Date(),
       text: rweet,
       attachmentUrl,
+      creatorName: userObj.displayName,
     };
+    console.log(rweetObj);
     await dbService.collection("rweets").add(rweetObj);
     setRweet("");
     setAttachment("");
