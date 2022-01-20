@@ -3,7 +3,7 @@ import { dbService, storageService } from "./../fbase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Rweet = ({ rweetObj, isOwner }) => {
+const Rweet = ({ rweetObj, isOwner, userObj }) => {
   const [editing, setEditing] = useState(false);
   const [newRweet, setNewRweet] = useState(rweetObj.text);
   const onDeleteClick = async () => {
@@ -50,6 +50,8 @@ const Rweet = ({ rweetObj, isOwner }) => {
       ) : (
         <>
           <h4>{rweetObj.text}</h4>
+          <h5>{userObj.displayName}</h5>
+          <h6>{rweetObj.createTime}</h6>
           {rweetObj.attachmentUrl && <img src={rweetObj.attachmentUrl} />}
           {isOwner && (
             <div className="rweet__actions">

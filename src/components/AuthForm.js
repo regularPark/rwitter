@@ -1,6 +1,5 @@
 import { authService } from "fbase";
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AuthForm = () => {
   const [error, setError] = useState("");

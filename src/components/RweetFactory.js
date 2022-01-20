@@ -23,6 +23,7 @@ const RweetFactory = ({ userObj }) => {
     const rweetObj = {
       creatorId: userObj.uid,
       createdAt: Date.now(),
+      createTime: Date(),
       text: rweet,
       attachmentUrl,
     };

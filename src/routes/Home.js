@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { dbService } from "./../fbase";
 import Rweet from "components/Rweet";
 import RweetFactory from "components/RweetFactory";
+import Profile from "./Profile";
 
-const Home = ({ userObj }) => {
+const Home = ({ refreshUser, userObj }) => {
   const [rweets, setRweets] = useState([]);
   useEffect(() => {
     dbService
@@ -17,20 +18,27 @@ const Home = ({ userObj }) => {
         setRweets(rweetArray);
       });
   }, []);
-
+  console.log(userObj.displayName);
   return (
-    <div className="container">
-      <RweetFactory userObj={userObj} />
-      <div div style={{ marginTop: 30 }}>
-        {rweets.map((rweet) => (
-          <Rweet
-            key={rweet.id}
-            rweetObj={rweet}
-            isOwner={rweet.creatorId === userObj.uid}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      {userObj.displayName !== null ? (
+        <div className="container">
+          <RweetFactory userObj={userObj} />
+          <div div style={{ marginTop: 30 }}>
+            {rweets.map((rweet) => (
+              <Rweet
+                key={rweet.id}
+                rweetObj={rweet}
+                isOwner={rweet.creatorId === userObj.uid}
+                userObj={userObj}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <Profile refreshUser={refreshUser} userObj={userObj} />
+      )}
+    </>
   );
 };
 
