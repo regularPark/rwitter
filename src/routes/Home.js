@@ -21,7 +21,7 @@ const Home = ({ refreshUser, userObj }) => {
   console.log(userObj.displayName);
   return (
     <>
-      {userObj.displayName !== null ? (
+      {userObj.displayName ? (
         <div className="container">
           <RweetFactory userObj={userObj} />
           <div div style={{ marginTop: 30 }}>

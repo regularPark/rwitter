@@ -63,13 +63,13 @@ const RweetFactory = ({ userObj }) => {
           value={rweet}
           onChange={onChange}
           type="text"
-          placeholder="What's on your mind?"
+          placeholder="오늘은 무슨 일이 있었나요?"
           maxLength={120}
         />
         <input type="submit" value="&rarr;" className="factoryInput__arrow" />
       </div>
       <label for="attach-file" className="factoryInput__label">
-        <span>Add photos</span>
+        <span>사진 업로드</span>
         <FontAwesomeIcon icon={faPlus} />
       </label>
       <input

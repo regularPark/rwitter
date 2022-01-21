@@ -7,7 +7,7 @@ const Rweet = ({ rweetObj, isOwner, userObj }) => {
   const [editing, setEditing] = useState(false);
   const [newRweet, setNewRweet] = useState(rweetObj.text);
   const onDeleteClick = async () => {
-    const ok = window.confirm("Are you sure you want to delete this rweet?");
+    const ok = window.confirm("크윗을 삭제하시겠습니까?");
     if (ok) {
       await dbService.doc(`rweets/${rweetObj.id}`).delete();
       await storageService.refFromURL(rweetObj.attachmentUrl).delete();
@@ -34,17 +34,17 @@ const Rweet = ({ rweetObj, isOwner, userObj }) => {
           <form onSubmit={onSubmit} className="container rweetEdit">
             <input
               type="text"
-              placeholder="Edit your Rweet"
+              placeholder="수정할 내용을 입력하세요."
               value={newRweet}
               required
               autoFocus
               onChange={onChange}
               className="formInput"
             />
-            <input type="submit" value="Update Rweet" className="formBtn" />
+            <input type="submit" value="키윗 업데이트" className="formBtn" />
           </form>
           <button onClick={toggleEditing} className="formBtn cancelBtn">
-            Cancel
+            취소
           </button>
         </>
       ) : (

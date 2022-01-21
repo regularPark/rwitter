@@ -40,7 +40,7 @@ function App() {
         "Initializing..."
       )}
       <footer className="copyright">
-        &copy; Rwitter {new Date().getFullYear()}
+        &copy; Kiwitter {new Date().getFullYear()}
       </footer>
     </>
   );

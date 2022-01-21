@@ -3,10 +3,10 @@ import React from "react";
 import { authService, firebaseInstance } from "./../fbase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTwitter,
   faGoogle,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import { faKiwiBird } from "@fortawesome/free-solid-svg-icons";
 
 const Auth = () => {
   const onSocialClick = async (event) => {
@@ -24,8 +24,8 @@ const Auth = () => {
   return (
     <div className="authContainer">
       <FontAwesomeIcon
-        icon={faTwitter}
-        color={"#04aaff"}
+        icon={faKiwiBird}
+        color={"#67a765"}
         size="3x"
         style={{ marginBottom: 30 }}
       />

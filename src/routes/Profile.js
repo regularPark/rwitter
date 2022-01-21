@@ -32,19 +32,19 @@ const Profile = ({ refreshUser, userObj }) => {
           onChange={onChange}
           type="text"
           autoFocus
-          placeholder="닉네임을 입력해주세요."
+          placeholder="닉네임이 필요합니다."
           value={newDisplayName}
           className="formInput"
         />
         <input
           type="submit"
-          value="Update Profile"
+          value="프로필 업데이트"
           className="formBtn"
           style={{ marginTop: 10 }}
         />
       </form>
       <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
-        Log Out
+        로그아웃
       </span>
     </div>
   );
