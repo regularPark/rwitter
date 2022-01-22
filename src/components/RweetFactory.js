@@ -7,6 +7,7 @@ import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 const RweetFactory = ({ userObj }) => {
   const [rweet, setRweet] = useState("");
   const [attachment, setAttachment] = useState("");
+
   const onSubmit = async (event) => {
     if (rweet === "") {
       return;
@@ -27,8 +28,8 @@ const RweetFactory = ({ userObj }) => {
       text: rweet,
       attachmentUrl,
       creatorName: userObj.displayName,
+      rweetLike: 0,
     };
-    console.log(rweetObj);
     await dbService.collection("rweets").add(rweetObj);
     setRweet("");
     setAttachment("");

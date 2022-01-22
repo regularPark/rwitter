@@ -6,8 +6,10 @@ import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 const Rweet = ({ rweetObj, isOwner, userObj }) => {
   const [editing, setEditing] = useState(false);
   const [newRweet, setNewRweet] = useState(rweetObj.text);
+  const [like, setLike] = useState(rweetObj.rweetLike);
+
   const onDeleteClick = async () => {
-    const ok = window.confirm("크윗을 삭제하시겠습니까?");
+    const ok = window.confirm("키윗을 삭제하시겠습니까?");
     if (ok) {
       await dbService.doc(`rweets/${rweetObj.id}`).delete();
       await storageService.refFromURL(rweetObj.attachmentUrl).delete();
@@ -27,6 +29,17 @@ const Rweet = ({ rweetObj, isOwner, userObj }) => {
     } = event;
     setNewRweet(value);
   };
+  const onLikeClick = () => {
+    setLike((rweetObj.rweetLike) = rweetObj.rweetLike + 1);
+    console.log("hi");
+  };
+  const onLikeSubmit = async (event) => {
+    event.preventDefault();
+    await dbService.doc(`rweets/${rweetObj.rweetLike}`).update({
+      rweetLike: like,
+    })
+  }
+
   return (
     <div className="rweet">
       {editing ? (
@@ -53,6 +66,7 @@ const Rweet = ({ rweetObj, isOwner, userObj }) => {
           <h5>{rweetObj.creatorName}</h5>
           <h6>{rweetObj.createTime}</h6>
           {rweetObj.attachmentUrl && <img src={rweetObj.attachmentUrl} />}
+          <button onClick={onLikeClick} onSubmit={onLikeSubmit}>Like {rweetObj.rweetLike}</button>
           {isOwner && (
             <div className="rweet__actions">
               <span onClick={onDeleteClick}>
